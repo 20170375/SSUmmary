@@ -6,9 +6,6 @@ function summarize_fn(text, deep, target_lang) {
             type: 'POST',
             url: ssummary_url,
             data: { 'content': text, 'deep': deep, 'target_lang': target_lang },
-            Headers: {
-                'Access-Control-Allow-Origin': '*',
-            },
             beforeSend: function(){
                 console.log("length: " + text.length + 
                                 "\ntarget_lang: " + target_lang +
