@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import JsonResponse
 
 from .modules.Converters import MyConverter
 
@@ -8,9 +8,6 @@ converter = MyConverter()
 
 #--- Function-based View
 def ssummary(request):
-    if request.method == 'GET':
-        return HttpResponse('GET request received')
-
     if request.method == 'POST':
         text = request.POST['content']
         deep = True if request.POST['deep'] == 'true' else False
@@ -41,8 +38,12 @@ def ssummary(request):
         print("번역 소요시간:", time.time() - start, "\n")
         ## ---시간측정--- ##
 
+        # JSON 객체 생성
+        result = {
+            'text': text_res,
+            'deep': deep,
+            'target_lang': target_lang
+        }
 
-        # send response
-        response = HttpResponse(text_res)
-        response["Access-Control-Allow-Origin"] = "*"
-        return response
+        # send response as JSON
+        return JsonResponse(result)
