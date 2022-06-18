@@ -1,6 +1,6 @@
 from .Cralwers import *
 
-import config
+from .config import papago_api
 import urllib.request
 
 from langdetect import detect
