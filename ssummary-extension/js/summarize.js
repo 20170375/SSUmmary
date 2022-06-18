@@ -14,9 +14,9 @@ function summarize_fn(text, deep, target_lang) {
                                 "\ntarget_lang: " + target_lang +
                                 "\nbefore:\n" + text);
             },
-            success: function(data, status){
-                console.log("length: " + data.length + "\nafter:\n" + data);
-                resolve(data);
+            success: function(result, status){
+                console.log("length: " + result.length + "\nafter:\n" + result);
+                resolve(result);
             },
             error: function(xhr, status, error){
                 if (error == "") error = "server cannot connect";
