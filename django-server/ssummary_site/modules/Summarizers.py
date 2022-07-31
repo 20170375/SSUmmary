@@ -109,11 +109,18 @@ class Summarizer_with_textrank:
         scores = self.calculate_score(matrixs)
         
         return self.ranked_sentences(sentences, scores, n)
-        
-class Summarizer_with_KoBart:
+
+class Summarizer_with_Bart:
     def __init__(self, model_name):
         self.tokenizer = PreTrainedTokenizerFast.from_pretrained(model_name)
         self.model     = BartForConditionalGeneration.from_pretrained(model_name)
+        
+    def generate(self, text, input_size, deep):
+        raise NotImplementedError
+    
+class Summarizer_with_KoBart(Summarizer_with_Bart):
+    def __init__(self):
+        super().__init__('digit82/kobart-summarization')
         
     def generate(self, text, input_size=1024, deep=False):
         result = ""
@@ -141,10 +148,9 @@ class Summarizer_with_KoBart:
                 result += self.tokenizer.decode(summary_ids.squeeze().tolist(), skip_special_tokens=True)
         return result
 
-class Summarizer_with_Bart_r3f:
-    def __init__(self, model_name):
-        self.tokenizer = PreTrainedTokenizerFast.from_pretrained(model_name)
-        self.model     = BartForConditionalGeneration.from_pretrained(model_name)
+class Summarizer_with_Bart_r3f(Summarizer_with_Bart):
+    def __init__(self):
+        super().__init__('alaggung/bart-r3f')
         
     def generate(self, text, input_size=512, deep=False):
         if input_size > 512:
