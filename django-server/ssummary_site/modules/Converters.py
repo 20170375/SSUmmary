@@ -15,8 +15,8 @@ class MyConverter:
         print("Log: translater 초기화 성공")       
 
         # initialize summarizer instance
-        # self.summarizer = Summarizer_with_KoBart('digit82/kobart-summarization')
-        # self.summarizer = Summarizer_with_Bart_r3f('alaggung/bart-r3f')
+        # self.summarizer = Summarizer_with_KoBart()
+        # self.summarizer = Summarizer_with_Bart_r3f()
         self.summarizer = Summarizer_with_textrank()
         print("Log: summarizor 초기화 성공")
         print("=" * 50, end="\n\n")
