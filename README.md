@@ -14,3 +14,10 @@
 
 ## Architecture
 <img src="https://user-images.githubusercontent.com/62216628/167875676-19ceea8b-35c8-4ca9-aca4-773dbfbc6408.png" width="70%" align="center">
+
+## Reference
++ [[Repo] KoBART :: SKT-AI](https://github.com/SKT-AI/KoBART)
++ [[Repo] py-googletrans :: ssut](https://github.com/ssut/py-googletrans)
++ [[Medium] Fine-tune BERT for Extractive Summarization :: Young-Geun Kim](https://medium.com/@eyfydsyd97/bert%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%9A%94%EC%95%BD-text-summary-b582b5cc7d)
++ [[Tistory] TexRank를 이용한 문서요약](https://excelsior-cjh.tistory.com/93)
++ [[Doc] Chrome Extensions Developer](https://developer.chrome.com/docs/extensions/)
